@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Google Phone Gallery</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+
+</head>
+<body>
+
+<div class="view-container">
+    <div ng-view class="view-frame"></div>
+</div>
+
+
+<script src="bower_components/seajs/dist/sea-debug.js"></script>
+<script src="http://localhost:63342/angular.js/angular-phonecat/app/bower_components/angular/angular.js"></script>
+<script>
+
+    // Set configuration
+    seajs.config({
+        base: "../dist/js",
+        alias: {
+            "jquery": "../../app/bower_components/jquery/jquery/1.10.1/jquery.js",
+            "angular": "../../app/bower_components/angular/angular.js",
+            "angular-route": "../../app/bower_components/angular-route/angular-route.js",
+            "angular-resource": "../../app/bower_components/angular-resource/angular-resource.js",
+            "angular-animate": "../../app/bower_components/angular-animate/angular-animate.js",
+            "jquery-debug": "../../app/bower_components/jquery/jquery/1.10.1/jquery.js",
+            "angular-debug": "../../app/bower_components/angular/angular.js",
+            "angular-route-debug": "../../app/bower_components/angular-route/angular-route.js",
+            "angular-resource-debug": "../../app/bower_components/angular-resource/angular-resource.js",
+            "angular-animate-debug": "../../app/bower_components/angular-animate/angular-animate.js"
+        }
+    });
+
+
+    // For development
+    if (location.href.indexOf("?dev") > 0) {
+        seajs.use("../dist/js/main-debug.js");
+    }
+    // For production
+    else {
+        seajs.use("../dist/js/main.js");
+    }
+</script>
+</body>
+</html>

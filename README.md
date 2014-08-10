@@ -1,3 +1,7 @@
+#加入seajs
+
+在原项目基础上加入seajs,想使用seajs+angularjs做项目的同学可以参考
+
 # AngularJS Phone Catalog Tutorial Application
 
 ## Overview
